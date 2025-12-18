@@ -1,0 +1,443 @@
+/* === Шапка === */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 10, 22, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(94, 96, 206, 0.2);
+  padding: calc(var(--spacing-unit) * 2) 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 3);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.anchor-nav ul {
+  list-style: none;
+  display: flex;
+  gap: calc(var(--spacing-unit) * 2.5);
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.anchor-nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.25);
+  border-radius: 30px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.anchor-nav a:hover,
+.anchor-nav a:focus {
+  color: var(--accent);
+  background: rgba(0, 245, 212, 0.1);
+}
+
+/* === Hero === */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary)),
+              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><path d="M0,0 L200,200 M200,0 L0,200" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>');
+  background-size: cover, 20px 20px;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: calc(var(--spacing-unit) * 8) var(--spacing-unit);
+  margin-bottom: calc(var(--spacing-unit) * 8);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,245,212,0.1) 0%, transparent 70%);
+  animation: pulse 12s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  margin: 0 0 calc(var(--spacing-unit) * 4);
+  text-shadow: 0 0 12px rgba(0, 245, 212, 0.7);
+}
+
+/* === Основной контент === */
+main {
+  padding-block: calc(var(--spacing-unit) * 4);
+}
+
+section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing-unit) * 5);
+  margin-bottom: calc(var(--spacing-unit) * 6);
+  border: 1px solid rgba(94, 96, 206, 0.15);
+  transition: var(--transition);
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 245, 212, 0.3);
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  margin-top: 0;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+ul {
+  padding-left: calc(var(--spacing-unit) * 5);
+}
+li {
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+/* === Ссылки между разделами === */
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 2);
+  justify-content: center;
+}
+
+.page-links a {
+  display: inline-block;
+  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2.5);
+  background: rgba(10, 36, 99, 0.3);
+  border: 1px solid rgba(94, 96, 206, 0.3);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.page-links a:hover {
+  background: rgba(0, 245, 212, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* === Подвал === */
+footer {
+  background: var(--surface);
+  padding: calc(var(--spacing-unit) * 5) var(--spacing-unit);
+  text-align: center;
+  border-top: 1px solid rgba(94, 96, 206, 0.1);
+  margin-top: calc(var(--spacing-unit) * 4);
+}
+
+footer p {
+  margin: calc(var(--spacing-unit) * 2) 0;
+  opacity: 0.8;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 3);
+  margin: calc(var(--spacing-unit) * 3) 0;
+}
+
+.footer-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-links a:hover {
+  color: var(--accent);
+}
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  color: var(--accent);
+  margin: 0 0 calc(var(--spacing-unit) * 3);
+  text-align: center;
+}
+
+/* === Кнопки навигации между разделами (на странице увлечений) === */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--spacing-unit) * 1.5);
+  max-width: 400px;
+  margin: calc(var(--spacing-unit) * 3) auto;
+}
+
+.nav-buttons a {
+  display: inline-block;
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1.5);
+  background: rgba(10, 36, 99, 0.3);
+  border: 1px solid rgba(94, 96, 206, 0.3);
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.95rem;
+  flex: 1;
+  transition: var(--transition);
+  line-height: 1.4;
+}
+
+.nav-buttons a:hover {
+  background: rgba(0, 245, 212, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* === Ссылка "наверх" === */
+.back-to-nav {
+  display: inline-block;
+  margin-top: calc(var(--spacing-unit) * 2);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-to-nav:hover {
+  text-decoration: underline;
+}
+
+/* === Изображения === */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: calc(var(--spacing-unit) * 2) 0;
+  display: block;
+  border: 1px solid rgba(94, 96, 206, 0.2);
+}
+/* === Шапка с изображением (только для gallery.html) === */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid rgba(94, 96, 206, 0.15);
+  padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+  margin-bottom: calc(var(--spacing-unit) * 4);
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.25rem, 7vw, 3rem);
+  color: var(--accent);
+  margin: 0 0 calc(var(--spacing-unit) * 3);
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(94, 96, 206, 0.2);
+  margin: 0 auto;
+  display: block;
+  max-width: 300px;
+}
+
+/* === Навигация внутри шапки === */
+.nav-in-header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 2);
+  margin-top: calc(var(--spacing-unit) * 3);
+}
+
+.nav-in-header a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  position: relative;
+  padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+}
+
+.nav-in-header a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  box-shadow: 0 0 4px var(--accent);
+  transition: width var(--transition);
+}
+
+.nav-in-header a:hover::after {
+  width: 100%;
+}
+
+/* === Галерея === */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: calc(var(--spacing-unit) * 3);
+  margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 245, 212, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Карта сайта (блок ссылок) === */
+.site-map {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 1.5);
+}
+
+.site-map a {
+  display: inline-block;
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+  background: rgba(10, 36, 99, 0.3);
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.site-map a:hover {
+  background: rgba(0, 245, 212, 0.15);
+  color: var(--accent);
+}
+
+.hero-image {
+  text-align: center;
+  margin: calc(var(--spacing-unit) * 4) 0;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(94, 96, 206, 0.2);
+  max-width: 300px;
+}
+/* === Шапка с изображением (как в about.html и gallery.html) === */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid rgba(94, 96, 206, 0.15);
+  padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+  margin-bottom: calc(var(--spacing-unit) * 4);
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.25rem, 7vw, 3rem);
+  color: var(--accent);
+  margin: 0 0 calc(var(--spacing-unit) * 3);
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(94, 96, 206, 0.2);
+  margin: 0 auto;
+  display: block;
+  max-width: 300px;
+}
+
+/* === Навигация в шапке === */
+.nav-in-header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 1.5);
+  margin-top: calc(var(--spacing-unit) * 3);
+}
+
+.nav-in-header a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.92rem;
+  position: relative;
+  padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+}
+
+.nav-in-header a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  box-shadow: 0 0 4px var(--accent);
+  transition: width var(--transition);
+}
+
+.nav-in-header a:hover::after {
+  width: 100%;
+}
+
+/* === Списки и таблицы === */
+ul, ol {
+  padding-left: calc(var(--spacing-unit) * 4);
+}
+
+li {
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: calc(var(--spacing-unit) * 2);
+}
+
+th, td {
+  padding: calc(var(--spacing-unit) * 1.5);
+  text-align: left;
+  border-bottom: 1px solid rgba(94, 96, 206, 0.2);
+}
+
+th {
+  background: rgba(10, 36, 99, 0.3);
+  font-weight: 600;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Контакты Тихона Павлова: форма обратной связи, телефон, email, Telegram." />
+  <title>Контакты — Тихон Павлов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/adaptive.css">
+  <style>
+    /* Только специфичные для contacts.html стили */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Герой-видео (если хочешь отдельное видимое видео) */
+    .hero-video {
+      width: 100%;
+      max-width: 300px;
+      margin: calc(var(--spacing-unit) * 3) auto;
+      border-radius: var(--radius);
+      display: block;
+      border: 1px solid rgba(94, 96, 206, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Фоновое видео -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="images/челиксы.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+  </video>
+
+  <!-- Всё содержимое поверх видео -->
+  <div class="page-wrapper">
+    <header>
+      <div class="container header-content">
+        <a href="index.html" class="logo">Тихон Павлов</a>
+        <nav class="anchor-nav">
+          <ul>
+            <li><a href="index.html">Домой</a></li>
+            <li><a href="about.html">О себе</a></li>
+            <li><a href="hobbies.html">Увлечения</a></li>
+            <li><a href="gallery.html">Галерея</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="connection">
+        <h1>Контакты</h1>
+      </section>
+
+      <section id="links">
+        <div class="site-map">
+          <a href="#form">Обратная связь</a>
+          <a href="#connection">Связь</a>
+          <a href="#social">Telegram</a>
+        </div>
+      </section>
+
+      <section id="form">
+        <h2>Обратная связь</h2>
+        <form>
+          <div>
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="subject">Тема:</label>
+            <select id="subject" name="subject">
+              <option>Общий вопрос</option>
+              <option>Молитва о здравии автора</option>
+              <option>Подать записку о здравии родных</option>
+              <option>Предложить работу по профилю</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">Отправить</button>
+        </form>
+      </section>
+
+      <section id="connection-section">
+        <h2>Как со мной связаться</h2>
+        <ol>
+          <li>Номер телефона: <code>+7 920-140-87-97</code></li>
+          <li>Почта: <a href="mailto:tix.111@yandex.ru">tix.111@yandex.ru</a></li>
+        </ol>
+      </section>
+
+      <section id="social">
+        <h2>Телеграм</h2>
+        <ul>
+          <li>
+            <a href="https://t.me/Graff_troll" target="_blank" rel="noopener">
+              @Graff_Troll
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© Никто не покупает, а ты возьми и купи «Фоксхол»</p>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
